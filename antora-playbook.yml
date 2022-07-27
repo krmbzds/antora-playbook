@@ -37,7 +37,7 @@ ui:
   - path: .nojekyll
 
 output:
-  # dir: ./public
+  dir: ./public
   clean: true
 
 runtime:

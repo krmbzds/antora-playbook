@@ -1,0 +1,44 @@
+# runtime:
+#   cache_dir: ./.cache/antora
+#   log:
+#     failure_level: warn
+
+site:
+  title: Kerem Bozdas - Personal Webpage
+  url: https://kerembozdas.com
+  start_page: about::index.adoc
+
+content:
+  sources:
+  - url: https://github.com/krmbzds/about.git
+  - url: https://github.com/krmbzds/wiki.git
+  - url: https://github.com/krmbzds/snippets.git
+  - url: https://github.com/krmbzds/lists.git
+
+# asciidoc:
+#   attributes:
+#     experimental: ''
+#     hide-uri-scheme: '@'
+#     idprefix: ''
+#     idseparator: '-'
+#     page-pagination: ''
+#     table-frame: 'none@'
+#     table-grid: 'rows@'
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files:
+  - path: ui.yml
+    contents: |
+      static_files:
+      - .nojekyll
+  - path: .nojekyll
+
+output:
+  # dir: ./public
+  clean: true
+
+runtime:
+  fetch: true

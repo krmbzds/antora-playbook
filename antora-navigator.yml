@@ -1,0 +1,4 @@
+groups:
+- root: true
+  components: ['wiki', 'snippets', 'lists']
+output_file: site-navigation-data.js

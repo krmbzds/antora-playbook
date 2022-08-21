@@ -1,0 +1,1 @@
+../../antora-navigator-extension/data/js/nav.js

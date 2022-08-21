@@ -1,0 +1,3 @@
+[submodule "antora-navigator-extension"]
+	path = antora-navigator-extension
+	url = https://github.com/krmbzds/antora-navigator-extension

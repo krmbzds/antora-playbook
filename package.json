@@ -1,13 +1,15 @@
 {
   "private": true,
   "scripts": {
+    "preclean-build": "git submodule update --init --recursive",
     "clean-build": "npm run clean-install; npm run build",
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json; npm run plain-install",
     "plain-install": "npm i --cache=.cache/npm --no-optional",
-    "build": "antora antora-playbook.yml --stacktrace --fetch --clean"
+    "build": "antora  --extension=antora-navigator-extension antora-playbook.yml --stacktrace --fetch --clean"
   },
   "devDependencies": {
     "@antora/cli": "^3.0.3",
-    "@antora/site-generator-default": "^3.0.3"
+    "@antora/site-generator-default": "^3.0.3",
+    "antora-navigator-extension": "file:antora-navigator-extension"
   }
 }

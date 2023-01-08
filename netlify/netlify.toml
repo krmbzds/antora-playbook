@@ -1,0 +1,44 @@
+[build]
+publish = "public"
+ignore = "false"
+
+[build.environment]
+NODE_VERSION = "16"
+NPM_FLAGS = "--omit=optional"
+ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
+
+[build.processing]
+skip_processing = false
+
+[build.processing.html]
+# NOTE must be set to enable forwarding of paths like /asciidoc/latest to /asciidoc/latest/
+pretty_urls = true
+
+[build.processing.images]
+compress = true
+
+[context.production]
+command = """\
+npx antora --stacktrace --fetch --extension=../antora-navigator-extension --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=~+/public ../antora-playbook.yml
+"""
+
+# checklinks doesn't understand the DEPLOY_PRIME_URL, so use our patched version
+[[plugins]]
+package = "./node_modules/netlify-plugin-checklinks"
+
+[plugins.inputs]
+entryPoints = ["**/*.html"]
+recursive = true
+pretty = true
+# IMPORTANT the leading space in the skipPattern is significant
+# NOTE this site uses a redirect in place of a root index page, so the root index page must be excluded
+skipPatterns = [" public/index.html", " href=\"file://"]
+todoPatterns = []
+checkExternal = false
+followSourceMaps = false
+
+[[headers]]
+for = "/_/font/*"
+  [headers.values]
+  Cache-Control = "public,max-age=604800"
+

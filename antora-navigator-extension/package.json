@@ -1,0 +1,59 @@
+{
+  "name": "antora-navigator-extension",
+  "version": "1.0.0-alpha.0",
+  "description": "An Antora extension that exports the navigation data to JavaScript so the navigation tree can be built in the browser.",
+  "license": "MPL-2.0",
+  "author": "Dan Allen <dan@opendevise.com>",
+  "repository": "https://gitlab.com/opendevise/oss/antora-navigator-extension",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "engines": {
+    "node": ">=12.21.0"
+  },
+  "scripts": {
+    "coverage": "nyc _mocha",
+    "format": "node npm/format.js data,lib,test,npm",
+    "lint": "eslint \"{data,lib,test,npm}/**/*.js\"",
+    "test": "_mocha"
+  },
+  "files": [
+    "data",
+    "lib"
+  ],
+  "keywords": [
+    "antora",
+    "antora-extension",
+    "navigation",
+    "ui"
+  ],
+  "dependencies": {
+    "@antora/expand-path-helper": "~2.0",
+    "uglify-js": "~3.14"
+  },
+  "devDependencies": {
+    "chai": "~4.3",
+    "chai-fs": "~2.0",
+    "dirty-chai": "~2.0",
+    "eslint": "~7.32",
+    "eslint-config-standard": "~16.0",
+    "mocha": "~9.1",
+    "nyc": "~15.1",
+    "outdent": "0.8.0",
+    "prettier-eslint": "~13.0"
+  },
+  "nyc": {
+    "cache": true,
+    "cacheDir": "node_modules/.cache/nyc",
+    "include": [
+      "lib/*.js"
+    ],
+    "reporter": [
+      "cobertura",
+      "lcov",
+      "text"
+    ],
+    "reportDir": "reports"
+  }
+}

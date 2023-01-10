@@ -7,6 +7,23 @@ site:
   title: Kerem Bozdas
   url: https://wiki.kerembozdas.com
   start_page: wiki::index.adoc
+  robots: |-
+    user-agent: ahrefsbot
+    user-agent: amazonbot
+    user-agent: aspiegelbot
+    user-agent: blexbot
+    user-agent: dataforseobot
+    user-agent: dotbot
+    user-agent: facebookscraper
+    user-agent: mj12bot
+    user-agent: rogerbot
+    user-agent: seekport crawler
+    user-agent: semrushbot
+    user-agent: semrushbot-sa
+    user-agent: turnitinbot
+    user-agent: yandex
+    user-agent: zoominfobot
+    disallow: /
 
 content:
   sources:

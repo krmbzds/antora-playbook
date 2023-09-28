@@ -8,22 +8,24 @@ site:
   url: https://wiki.kerembozdas.com
   start_page: wiki::index.adoc
   robots: |-
-    user-agent: ahrefsbot
-    user-agent: amazonbot
-    user-agent: aspiegelbot
-    user-agent: blexbot
-    user-agent: dataforseobot
-    user-agent: dotbot
-    user-agent: facebookscraper
-    user-agent: mj12bot
-    user-agent: rogerbot
-    user-agent: seekport crawler
-    user-agent: semrushbot
-    user-agent: semrushbot-sa
-    user-agent: turnitinbot
-    user-agent: yandex
-    user-agent: zoominfobot
-    disallow: /
+    User-Agent: ChatGPT-User
+    User-Agent: GPTBot
+    User-Agent: ahrefsbot
+    User-Agent: amazonbot
+    User-Agent: aspiegelbot
+    User-Agent: blexbot
+    User-Agent: dataforseobot
+    User-Agent: dotbot
+    User-Agent: facebookscraper
+    User-Agent: mj12bot
+    User-Agent: rogerbot
+    User-Agent: seekport crawler
+    User-Agent: semrushbot
+    User-Agent: semrushbot-sa
+    User-Agent: turnitinbot
+    User-Agent: yandex
+    User-Agent: zoominfobot
+    Disallow: /
 
 content:
   sources:

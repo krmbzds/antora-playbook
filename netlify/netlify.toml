@@ -3,7 +3,7 @@ publish = "public"
 ignore = "false"
 
 [build.environment]
-NODE_VERSION = "16"
+NODE_VERSION = "24"
 NPM_FLAGS = "--omit=optional"
 ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 
